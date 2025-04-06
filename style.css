@@ -1,0 +1,91 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #ffcc00;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-container {
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 220px;
+}
+
+.game-banner {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game-title {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.game-description {
+    font-size: 1em; /* was 0.9em before */
+    color: #cccccc;
+    margin-bottom: 10px;
+    line-height: 1.5; /* makes it more readable */
+}
+
+.download-button {
+    width: 150px;
+    height: auto;
+}
+/* Ultra Dark Mode Overlay */
+#dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+    #dark-overlay.active {
+        opacity: 1;
+    }
+
+/* Toggle Button Style */
+#toggle-darkmode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.3s;
+}
+
+    #toggle-darkmode:hover {
+        background-color: #333;
+    }
+
+.Web-Logo {
+    padding: 10px;
+    border-radius: -20px;
+    text-align: center;
+    width: 325px;
+}
