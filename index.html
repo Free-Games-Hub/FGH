@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Games Hub</title>
+    <link rel="stylesheet" href="index1-style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+
+    <img src="images/Logo.png" class="Web-Logo" alt="Logo">
+
+    <div class="game-list">
+        <!-- Toilet Chronicles -->
+        <div class="game-container" data-description="Survive the mysterious public restroom horror!">
+            <a href="index2.html">
+                <img src="images/toilet_chronicles.jpg" class="game-banner" alt="Toilet Chronicles">
+            </a>
+            <p class="game-title">Toilet Chronicles</p>
+            <p class="game-description">Survive the mysterious public restroom horror!</p>
+            <a href="index2.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- Henry Stickmin Collection -->
+        <div class="game-container" data-description="A fun interactive game with multiple endings.">
+            <a href="index7.html">
+                <img src="images/henry_stickmin.jpg" class="game-banner" alt="Henry Stickmin Collection">
+            </a>
+            <p class="game-title">Henry Stickmin Collection</p>
+            <p class="game-description">A fun interactive game with multiple endings.</p>
+            <a href="index7.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- Geometry Dash -->
+        <div class="game-container" data-description="Jump and fly through obstacles in this rhythm-based platformer.">
+            <a href="index3.html">
+                <img src="images/geometry_dash.jpg" class="game-banner" alt="Geometry Dash">
+            </a>
+            <p class="game-title">Geometry Dash</p>
+            <p class="game-description">Jump and fly through obstacles in this rhythm-based platformer.</p>
+            <a href="index3.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- Clustertruck -->
+        <div class="game-container" data-description="A Game About Jumping Over Trucks With Abilities And Many Levels">
+            <a href="index5.html">
+                <img src="images/Clustertruck.jpg" class="game-banner" alt="Clustertruck">
+            </a>
+            <p class="game-title">Clustertruck</p>
+            <p class="game-description">Jump over moving trucks and survive chaotic levels!</p>
+            <a href="index5.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- A Game About Digging A Hole -->
+        <div class="game-container" data-description="As The Name Suggests, It's A Game Where You Dig A Very Deep Hole">
+            <a href="index4.html">
+                <img src="images/A_Game_About_Digging_A_Hole.jpg" class="game-banner" alt="A Game About Digging A Hole">
+            </a>
+            <p class="game-title">A Game About Digging A Hole</p>
+            <p class="game-description">As The Name Suggests, It's A Game Where You Dig A Very Deep Hole</p>
+            <a href="index4.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- Terraria -->
+        <div class="game-container" data-description="Dig,fight,explore,build! Nothing is impossible in this action-packed adventure game.">
+            <a href="index6.html">
+                <img src="images/Terraria.jpg" class="game-banner" alt="Terraria">
+            </a>
+            <p class="game-title">Terraria</p>
+            <p class="game-description">Dig,fight,explore,build! Nothing is impossible in this action-packed adventure game.</p>
+            <a href="index6.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- People Playground -->
+        <div class="game-container" data-description="Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls in a large open space">
+            <a href="index8.html">
+                <img src="images/People Playground.jpg" class="game-banner" alt="People Playground">
+            </a>
+            <p class="game-title">People Playground</p>
+            <p class="game-description">Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls in a large open space</p>
+            <a href="index8.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+
+        <!-- Template Game -->
+        <div class="game-container" data-description="Template Game No Need To Download">
+            <a href="index9.html">
+                <img src="images/Template.png" class="game-banner" alt="Template Game">
+            </a>
+            <p class="game-title">Template Game</p>
+            <p class="game-description">Template Game No Need To Download</p>
+            <a href="index9.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
+    </div>
+
+    <p class="disclaimer">A PC Gamer's Safe Haven</p>
+
+    <!-- Dark Mode Toggle -->
+    <div id="dark-toggle" onclick="toggleDarkOverlay()">🌙</div>
+
+    <!-- 🎨 Theme Pack Toggle -->
+    <div id="theme-toggle">🎨</div>
+    <div id="theme-menu">
+        <button onclick="setTheme('default')">Default</button>
+        <button onclick="setTheme('cyberpunk')">Cyberpunk</button>
+        <button onclick="setTheme('midnight')">Midnight</button>
+        <button onclick="setTheme('ice')">Blue Ice</button>
+        <button onclick="setTheme('Glitch')">Glitch</button>
+        <button onclick="setTheme('Galaxy')">Galaxy</button>
+        <button onclick="setTheme('SolarFlare')">SolarFlare</button>
+        <button onclick="setTheme('HackerZone')">Hacker Zone</button>
+        <button onclick="setTheme('pixelblast')">Pixel Blast</button>
+        <button onclick="setTheme('PaperB')">Black Paper</button>
+    </div>
+    <!-- Firebase -->
+    <script src="firebase.js"></script>
+
+    <script>
+        const darkOverlay = document.createElement("div");
+        darkOverlay.classList.add("dark-overlay");
+        document.body.appendChild(darkOverlay);
+
+        function toggleDarkOverlay() {
+            const isActive = darkOverlay.classList.contains("active");
+
+            if (isActive) {
+                darkOverlay.classList.remove("active");
+                localStorage.setItem("darkMode", "off");
+                document.querySelectorAll(".game-container").forEach(el => el.classList.remove("dark-glow"));
+                darkOverlay.style.transition = "opacity 0.8s ease-out";
+            } else {
+                darkOverlay.classList.add("active");
+                localStorage.setItem("darkMode", "on");
+                document.querySelectorAll(".game-container").forEach(el => el.classList.add("dark-glow"));
+                darkOverlay.style.transition = "opacity 0.8s ease-in";
+            }
+        }
+
+        // 🎨 Theme Handling
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeMenu = document.getElementById("theme-menu");
+
+        themeToggle.onclick = () => {
+            themeMenu.classList.toggle("show");
+        };
+
+        function setTheme(theme) {
+            document.body.className = theme;
+            localStorage.setItem("theme", theme);
+        }
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) document.body.className = savedTheme;
+
+        window.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("darkMode") === "on") {
+                darkOverlay.classList.add("active");
+                document.querySelectorAll(".game-container").forEach(el => el.classList.add("dark-glow"));
+            }
+
+            const hour = new Date().getHours();
+            if ((hour >= 19 || hour <= 6) && !localStorage.getItem("darkMode")) {
+                toggleDarkOverlay();
+            }
+
+            window.addEventListener("beforeunload", () => {
+                darkOverlay.style.transition = "opacity 0.4s ease";
+                darkOverlay.style.opacity = "0";
+            });
+        });
+    </script>
+
+    <style>
+        /* 🔥 Dark Overlay */
+        .dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+            .dark-overlay.active {
+                opacity: 1;
+            }
+
+        .game-container.dark-glow {
+            box-shadow: 0 0 20px white;
+            transition: box-shadow 0.5s ease;
+        }
+
+        /* 🌙 Dark Toggle */
+        #dark-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, #333, #222);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(255, 0, 255, 0.5);
+            font-size: 1.3em;
+            cursor: pointer;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+
+            #dark-toggle:hover {
+                animation: flicker 0.4s infinite alternate;
+                text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+            }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
+        }
+
+        /* 🎨 Theme Toggle */
+        #theme-toggle {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: linear-gradient(145deg, #333, #111);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+            font-size: 1.3em;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        #theme-menu {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            background: #222;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 9999;
+        }
+
+            #theme-menu.show {
+                display: flex;
+            }
+
+            #theme-menu button {
+                padding: 8px;
+                background: #333;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+                #theme-menu button:hover {
+                    background: #555;
+                }
+
+        /* 🎨 Themes */
+        body.default {
+            background: #111;
+            color: white;
+        }
+
+        body.cyberpunk {
+            background: #0f0f0f;
+            color: #39ff14;
+        }
+
+            body.cyberpunk .game-container {
+                border: 1px solid #39ff14;
+            }
+
+        body.midnight {
+            background: #000014;
+            color: #99ccff;
+        }
+
+            body.midnight .game-container {
+                border: 1px solid #99ccff;
+            }
+
+        body.retro {
+            background: #2b1d0e;
+            color: #fcd116;
+        }
+
+            body.retro .game-container {
+                border: 1px solid #fcd116;
+                background: #0D80DE;
+            }
+
+        body.ice {
+            background: #0D80DE;
+            color: #0E2AEB
+        }
+
+            body.ice .game-container {
+                border: 1px solid #0099cc;
+            }
+
+        body.Glitch {
+            background: url('images/Glitch.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+            body.Glitch .game-container {
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                background: url('images/Glitch.jpg') no-repeat center center fixed;
+                backdrop-filter: blur(4px);
+            }
+
+        body.Galaxy {
+            background: url('images/galaxy_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+            body.Galaxy .game-container {
+                border: 1px solid rgba(0, 255, 153, 0.4);
+                background: url('images/galaxy_background.jpg') no-repeat center center fixed;
+                backdrop-filter: blur(2px);
+                box-shadow: 0 0 12px rgba(117, 18, 224, 0.55);
+                transition: all 0.4s ease;
+            }
+            body.SolarFlare {
+    background: linear-gradient(145deg, #240046, #ff6f00);
+    color: #ffe6c7;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body.SolarFlare .game-container {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(36, 0, 70, 0.5);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 12px rgba(255, 111, 0, 0.6);
+    transition: all 0.4s ease;
+}
+body.SolarFlare .game-container:hover {
+    box-shadow: 0 0 20px rgba(255, 183, 77, 0.9);
+    transform: scale(1.02);
+}
+
+
+            body.HackerZone {
+    background: linear-gradient(145deg, #000000, #003322);
+    color: #00ff99;
+    font-family: 'Courier New', monospace;
+}
+
+body.HackerZone .game-container {
+    border: 1px solid rgba(0, 255, 153, 0.4);
+    background: rgba(0, 50, 25, 0.3);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 12px rgba(0, 255, 153, 0.5);
+    transition: all 0.4s ease;
+}
+body.pixelblast {
+    background: #1a1a1a url('images/pixel-stars.gif') repeat;
+    color: #00ffcc;
+    font-family: 'Press Start 2P', cursive;
+}
+
+        body.pixelblast .game-container {
+            border: 2px dashed #ff00cc;
+            box-shadow: 0 0 10px #00ffcc;
+            background: url('images/pixel-stars.gif') no-repeat center center fixed;
+        }
+        body.PaperB {
+            background: url('images/Paper.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+            body.PaperB .game-container {
+                border: 1px solid rgba(0, 255, 153, 0.4);
+                background: url('images/Paper.jpg') no-repeat center center fixed;
+                backdrop-filter: blur(2px);
+                box-shadow: 0 0 12px rgba(33, 33, 33, 0.55);
+                transition: all 0.4s ease;
+            }
+
+
+    </style>
+</body>
+</body>
+</html>

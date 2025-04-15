@@ -1,0 +1,11 @@
+        <!-- Template Game -->
+        <div class="game-container" data-description="Template Game No Need To Download">
+            <a href="index9.html">
+                <img src="images/Template.png" class="game-banner" alt="Template Game">
+            </a>
+            <p class="game-title">Template Game</p>
+            <p class="game-description">Template Game No Need To Download</p>
+            <a href="index9.html">
+                <img src="images/download_button.png" class="download-button" alt="Download">
+            </a>
+        </div>
